@@ -1,0 +1,12 @@
+1. Build the app(any) and test in local
+2. Start dockerhub and docker-desktop and sign-in
+3. Prepare the dockerfile in the poject 
+4. Create the Docker image and test it:
+   >> docker build -t kubernets-test-app:latest
+   >> docker images
+   >> docker run -p 5000:5000 cubernetes-test-app:latest
+
+5. Create deplpyment.yaml 
+6. Install Minikube
+>>minikube start / minikube start --embed-certs 
+
