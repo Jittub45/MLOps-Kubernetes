@@ -2,11 +2,49 @@
 2. Start dockerhub and docker-desktop and sign-in
 3. Prepare the dockerfile in the poject 
 4. Create the Docker image and test it:
-   >> docker build -t kubernets-test-app:latest
+   >> docker build -t kubernetes-test-app:latest
    >> docker images
-   >> docker run -p 5000:5000 cubernetes-test-app:latest
+   >> docker run -p 5000:5000 kubernetes-test-app:latest
 
 5. Create deplpyment.yaml 
 6. Install Minikube
->>minikube start / minikube start --embed-certs 
+>>minikube start / minikube start --embed-certs --//Powershell as admin
 
+>>minikube status
+
+>>kubectl get all -A 
+>>kubectl get pods -A 
+>>kubectl get nodes -A 
+
+How to add new node?
+------------------------------------------------------------------------------
+
+minikube start --nodes=2/minikube start --nodes=2 --embed-certs
+
+>>minikube image list
+>>docker images
+>>minikube image load kubernetes-test-app:latest ---//Push your image to k8s 
+
+>>kubectl apply -f deployment.yaml(from project directory) ----//Deployment via yaml file
+>>kubectl delete deployment kubernetes-test-app(conditional)
+
+
+>>kubectl get pods -A
+>>kubectl get nodes -A
+
+
+>>kubectl delete pod <pod-name/id>
+>>minikube service kubernetes-test-app ----// hit the port form web
+>>minikube dashboard
+
+>>kubectl get endpoints
+>>Kubectl get service
+
+
+Load Balancing
+-------------------------------------------------
+>>kubectl get pods
+>>kubectl logs -f <pod-id>
+>>Postman -> Collection -> Runs -> Performance -> Run Performance Test -> Performance -> (Fixed -> 10Users -> Imin)
+
+>>minikube stop
